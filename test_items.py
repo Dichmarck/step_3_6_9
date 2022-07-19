@@ -8,6 +8,6 @@ def test_product_page_contains_add_to_basket_button(browser):
     browser.get(url)
     browser.implicitly_wait(10)
     btns = browser.find_elements(By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
-    time.sleep(1)
+    time.sleep(5)  # решил поставить не 30 секунд, а 5. Зачем ждать слишком много?
 
     assert len(btns) > 0, "Add-to-basket button no found on product page"
